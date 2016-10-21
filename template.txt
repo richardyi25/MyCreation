@@ -5,29 +5,13 @@ Mrs. Krasteva
 %(date)s
 
 
-This program...
+This class...
 */
 
 import hsa.Console;
 import java.awt.*;
 
-public class %(class)s extends Thread
+public class %(class)s
 {
-    private Console c;
-    
-    //add more constructors if needed
-    public %(class)s (Console con)
-    {
-        c = con;
-    }
 
-    //*change to lowercase*
-    private void %(class)s ()
-    {
-
-    }
-
-    public void run(){
-        %(class)s (); //change to lowercase
-    }
 }

@@ -13,12 +13,19 @@ import java.awt.*;
 
 public class MyCreation extends Thread
 {
-    Console c;
-    
+    static Console c = new Console ("sample text XDD!!11!");
+
+
     public MyCreation ()
     {
-        c = new Console("sample text XDD!!11!");
+
     }
 
-    
+
+    public static void main (String[] args)
+    {
+	Background1 b = new Background1 (c);
+	//b.draw ();
+    }
 }
+
