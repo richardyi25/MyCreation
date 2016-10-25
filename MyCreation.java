@@ -58,9 +58,9 @@ public class MyCreation
     public static void main (String[] args)
     {
 	MyCreation m = new MyCreation ();
-	m.background1 ();
-	m.background2 ();
-	m.shrek1 ();
+	//m.background1 ();
+	//m.background2 ();
+	//m.shrek1 ();
 	m.sanic1 ();
     }
 }
