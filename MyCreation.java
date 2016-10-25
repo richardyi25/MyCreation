@@ -38,20 +38,13 @@ public class MyCreation
     {
 	Shrek s = new Shrek (c, 1);
 	s.start ();
-	try
-	{
-	    s.join ();
-	}
-	catch (InterruptedException e)
-	{
-	}
     }
 
 
     public void sanic1 ()
     {
 	Sanic s = new Sanic (c, 1);
-	s.run ();
+	s.start ();
     }
 
 
@@ -59,8 +52,8 @@ public class MyCreation
     {
 	MyCreation m = new MyCreation ();
 	//m.background1 ();
-	//m.background2 ();
-	//m.shrek1 ();
+	m.background2 ();
+	m.shrek1 ();
 	m.sanic1 ();
     }
 }

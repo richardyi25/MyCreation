@@ -2,15 +2,29 @@ import hsa.Console;
 import java.awt.*;
 import java.lang.Runnable;
 
-public class Sanic implements Runnable
+public class Sanic extends Thread
 {
     private Console c;
+    private ConsoleWithColor d;
     private int phase;
 
     public Sanic (Console con, int p)
     {
 	c = con;
+	d = new ConsoleWithColor (c);
 	phase = p;
+    }
+
+
+    public void delay (int ms)
+    {
+	try
+	{
+	    sleep (ms);
+	}
+	catch (InterruptedException e)
+	{
+	}
     }
 
 
@@ -25,64 +39,70 @@ public class Sanic implements Runnable
 	Color sanicBody = new Color (2, 28, 217);
 	Color sanicSkin = new Color (255, 255, 179);
 	Color sanicShoes = new Color (237, 23, 0);
+	Color pyramidFloor = new Color (240, 175, 22);
 
-	c.setColor (sanicBody);
-	c.fillOval (55, 35, 50, 40); //head
-	c.fillRect (70, 70, 20, 10); //neck
-	c.fillOval (55, 70, 50, 60); //body
+	for (int x = -200 ; x <= 100 ; x++)
+	{
+	    d.fillRect (x, 150, x + 160, 310, pyramidFloor);
 
+	    d.fillOval (55 + x, 185, 50, 40, sanicBody); //head
+	    d.fillRect (70 + x, 220, 20, 10, sanicBody); //neck
+	    d.fillOval (55 + x, 220, 50, 60, sanicBody); //body
 
-	c.setColor (sanicSkin);
-	c.fillOval (70, 95, 20, 20); // "belly"
-	c.fillOval (65, 55, 30, 10); //mouth outline
-	c.fillOval (65, 45, 15, 7); //eye background
-	c.fillOval (80, 45, 15, 7); //eye background
+	    d.fillOval (70 + x, 245, 20, 20, sanicSkin); // "belly"
+	    d.fillOval (65 + x, 205, 30, 10, sanicSkin); //mouth outline
+	    d.fillOval (65 + x, 195, 15, 7, sanicSkin); //eye background
+	    d.fillOval (80 + x, 195, 15, 7, sanicSkin); //eye background
 
-	c.setColor (Color.black);
-	c.fillOval (70, 45, 5, 7); //eyeballs
-	c.fillOval (85, 45, 5, 7);
-	c.drawLine (70, 60, 90, 60);
+	    d.fillOval (70 + x, 195, 5, 7, Color.black); //eyeballs
+	    d.fillOval (85 + x, 195, 5, 7, Color.black);
+	    d.drawLine (70 + x, 210, 90 + x, 210, Color.black); //mouth line
 
-	c.setColor (sanicBody);
-	int hair1X[] = {50, 90, 65};
-	int hair1Y[] = {15, 38, 40};
-	c.fillPolygon (hair1X, hair1Y, 3); //hair spike 1
+	    int hair1X[] = {50 + x, 90 + x, 65 + x};
+	    int hair1Y[] = {165, 188, 190};
+	    d.fillPolygon (hair1X, hair1Y, 3, sanicBody); //hair spike 1
 
-	int hair2X[] = {35, 70, 55};
-	int hair2Y[] = {20, 45, 50};
-	c.fillPolygon (hair2X, hair2Y, 3); //hair spike 1
+	    int hair2X[] = {35 + x, 70 + x, 55 + x};
+	    int hair2Y[] = {170, 195, 200};
+	    d.fillPolygon (hair2X, hair2Y, 3, sanicBody); //hair spike 1
 
-	int hair3X[] = {30, 55, 70};
-	int hair3Y[] = {40, 50, 65};
-	c.fillPolygon (hair3X, hair3Y, 3); //hair spike 1
+	    int hair3X[] = {30 + x, 55 + x, 70 + x};
+	    int hair3Y[] = {190, 200, 215};
+	    d.fillPolygon (hair3X, hair3Y, 3, sanicBody); //hair spike 1
 
-	c.fillRect (30, 90, 30, 10); //arms
-	c.fillRect (100, 90, 30, 10);
+	    d.fillRect (30 + x, 240, 30, 10, sanicBody); //arms
+	    d.fillRect (100 + x, 240, 30, 10, sanicBody);
 
-	c.setColor (Color.white);
-	c.fillOval (25, 87, 15, 15); //hands
-	c.fillOval (125, 87, 15, 15);
+	    d.fillOval (25 + x, 237, 15, 15, Color.white); //hands
+	    d.fillOval (125 + x, 237, 15, 15, Color.white);
 
-	c.setColor (Color.black);
-	c.drawOval (25, 87, 15, 15); //outline
-	c.drawOval (125, 87, 15, 15);
+	    d.drawOval (25 + x, 237, 15, 15, Color.black); //outline
+	    d.drawOval (125 + x, 237, 15, 15, Color.black);
 
-	c.setColor (sanicBody);
-	int leg1X[] = {62, 72, 52, 47};
-	int leg1Y[] = {122, 122, 150, 145};
-	c.fillPolygon (leg1X, leg1Y, 4); //left leg
+	    int leg1X[] = {62 + x, 72 + x, 52 + x, 47 + x};
+	    int leg1Y[] = {272, 272, 300, 295};
+	    d.fillPolygon (leg1X, leg1Y, 4, sanicBody); //left leg
 
-	int leg2X[] = {80, 90, 105, 100};
-	int leg2Y[] = {122, 122, 145, 150};
-	c.fillPolygon (leg2X, leg2Y, 4); //right leg
+	    int leg2X[] = {80 + x, 90 + x, 105 + x, 100 + x};
+	    int leg2Y[] = {272, 272, 295, 300};
+	    d.fillPolygon (leg2X, leg2Y, 4, sanicBody); //right leg
 
-	c.setColor (sanicShoes);
-	int shoe1X[] = {47, 52, 35};
-	int shoe1Y[] = {145, 150, 152};
-	c.fillPolygon (shoe1X, shoe1Y, 3); //left shoe
+	    int shoe1X[] = {47 + x, 52 + x, 35 + x};
+	    int shoe1Y[] = {295, 300, 302};
+	    d.fillPolygon (shoe1X, shoe1Y, 3, sanicShoes); //left shoe
 
-	int shoe2X[] = {105, 120, 100};
-	int shoe2Y[] = {145, 150, 150};
-	c.fillPolygon (shoe2X, shoe2Y, 3); //right shoe
+	    int shoe2X[] = {105 + x, 120 + x, 100 + x};
+	    int shoe2Y[] = {295, 300, 300};
+	    d.fillPolygon (shoe2X, shoe2Y, 3, sanicShoes); //right shoe
+
+	    delay (10);
+	}
+	Font f = new Font ("Comic Sans MS", 0, 14);
+	c.setFont (f);
+
+	c.drawString ("Wow we're here", 20, 200);
+	delay (700);
+
+	d.fillRect (20, 180, 120, 20, pyramidFloor);
     }
 }
