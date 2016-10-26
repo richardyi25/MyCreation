@@ -34,17 +34,20 @@ public class MyCreation
     }
 
 
-    public void shrek1 ()
-    {
-	Shrek s = new Shrek (c, 1);
-	s.start ();
-    }
-
-
     public void sanic1 ()
     {
 	Sanic s = new Sanic (c, 1);
 	s.start ();
+
+    }
+
+
+
+    public void shrek1 ()
+    {
+	Shrek s = new Shrek (c, 1);
+	s.start ();
+
 	try
 	{
 	    s.join ();
@@ -129,21 +132,39 @@ public class MyCreation
     }
 
 
+    public void quickscope ()
+    {
+	Quickscope q = new Quickscope (c);
+	q.start ();
+
+	try
+	{
+	    q.join ();
+	}
+	catch (InterruptedException e)
+	{
+	}
+    }
+
+
     public static void main (String[] args)
     {
 	MyCreation m = new MyCreation ();
-/*
-	m.background1 ();
+
+
+	//m.background1 ();
 	m.background2 ();
-	m.shrek1 ();
+
 	m.sanic1 ();
+	m.shrek1 ();
 	m.shrek2 ();
 	m.mountainDew ();
 	m.shrek3 ();
 	m.loominarty ();
-*/
-
 	m.airhorn ();
+
+
+	m.quickscope ();
     }
 }
 

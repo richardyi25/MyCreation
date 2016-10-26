@@ -95,7 +95,7 @@ public class Sanic extends Thread
 	    int shoe2Y[] = {295, 300, 300};
 	    d.fillPolygon (shoe2X, shoe2Y, 3, sanicShoes); //right shoe
 
-	    delay (10);
+	    //delay (10);
 	}
 
 	Font f = new Font ("Comic Sans MS", 0, 14);
