@@ -43,7 +43,7 @@ public class Sanic extends Thread
 
 	for (int x = -200 ; x <= 100 ; x++)
 	{
-	    d.fillRect (x, 150, x + 160, 310, pyramidFloor);
+	    d.fillRect (x, 150, 160, 160, pyramidFloor);
 
 	    d.fillOval (55 + x, 185, 50, 40, sanicBody); //head
 	    d.fillRect (70 + x, 220, 20, 10, sanicBody); //neck
@@ -97,11 +97,14 @@ public class Sanic extends Thread
 
 	    delay (10);
 	}
+
 	Font f = new Font ("Comic Sans MS", 0, 14);
 	c.setFont (f);
 
+	c.setColor (Color.black);
 	c.drawString ("Wow we're here", 20, 200);
-	delay (700);
+
+	delay (500);
 
 	d.fillRect (20, 180, 120, 20, pyramidFloor);
     }

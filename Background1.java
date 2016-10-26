@@ -25,6 +25,19 @@ public class Background1
     }
 
 
+    public void delay (int ms)
+    {
+	try
+	{
+	    Thread.sleep (ms);
+	}
+	catch (InterruptedException e)
+	{
+
+	}
+    }
+
+
     private void draw ()
     {
 	Color sand = new Color (255, 233, 121);
@@ -97,15 +110,25 @@ public class Background1
 	    d.drawLine (i, 350, i, 380, sand);
 	}
 
+	delay (3000);
 
-
-	try
+	for (int x = 0 ; x <= 640 ; x++)
 	{
-	    Thread.sleep (2000);
+	    d.drawLine (x, 0, x, 500, Color.black);
 	}
-	catch (InterruptedException e)
-	{
 
-	}
+	c.setColor (Color.green);
+	c.setFont (new Font ("Comic Sans MS", 1, 40));
+
+	c.drawString ("Long ago, in 42069 B.C.E.,", 60, 100);
+	c.drawString ("Shrek and Sanic decided to go", 30, 150);
+	c.drawString ("to the Great Dorito Pyramids", 50, 200);
+
+	delay (2000);
+
+	c.setFont (new Font ("Comic Sans MS", 1, 35));
+	c.drawString ("In search of the Golden Airhorn...", 20, 300);
+
+	delay (5000);
     }
 }

@@ -45,16 +45,89 @@ public class MyCreation
     {
 	Sanic s = new Sanic (c, 1);
 	s.start ();
+	try
+	{
+	    s.join ();
+	}
+	catch (InterruptedException e)
+	{
+	}
+    }
+
+
+    public void shrek2 ()
+    {
+	Shrek s = new Shrek (c, 2);
+	s.start ();
+    }
+
+
+    public void mountainDew ()
+    {
+	Color mtnOrange = new Color (255, 149, 41);
+	Color mtnBlue = new Color (78, 179, 255);
+
+	MountainDew md1 = new MountainDew (c);
+	md1.start ();
+	MountainDew md2 = new MountainDew (c, mtnOrange);
+	md2.start ();
+	MountainDew md3 = new MountainDew (c, mtnBlue, 600, 420);
+	md3.start ();
+
+	try
+	{
+	    md3.join ();
+	}
+	catch (InterruptedException e)
+	{
+	}
+    }
+
+
+    public void shrek3 ()
+    {
+	Shrek s = new Shrek (c, 3);
+	s.start ();
+
+	try
+	{
+	    s.join ();
+	}
+	catch (InterruptedException e)
+	{
+	}
+    }
+
+
+    public void loominarty ()
+    {
+	Loominarty l = new Loominarty (c);
+	l.start ();
+
+	try
+	{
+	    l.join ();
+	}
+	catch (InterruptedException e)
+	{
+	}
     }
 
 
     public static void main (String[] args)
     {
 	MyCreation m = new MyCreation ();
-	//m.background1 ();
+	/*
+	m.background1 ();
 	m.background2 ();
 	m.shrek1 ();
 	m.sanic1 ();
+	m.shrek2 ();
+	m.mountainDew ();
+		m.shrek3 ();
+	*/
+	m.loominarty ();
+
     }
 }
 
