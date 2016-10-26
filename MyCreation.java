@@ -114,9 +114,25 @@ public class MyCreation
     }
 
 
+    public void airhorn ()
+    {
+	Airhorn a = new Airhorn (c);
+	a.start ();
+
+	try
+	{
+	    a.join ();
+	}
+	catch (InterruptedException e)
+	{
+	}
+    }
+
+
     public static void main (String[] args)
     {
 	MyCreation m = new MyCreation ();
+/*
 	m.background1 ();
 	m.background2 ();
 	m.shrek1 ();
@@ -125,7 +141,9 @@ public class MyCreation
 	m.mountainDew ();
 	m.shrek3 ();
 	m.loominarty ();
+*/
 
+	m.airhorn ();
     }
 }
 
