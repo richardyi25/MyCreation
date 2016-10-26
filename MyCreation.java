@@ -117,15 +117,13 @@ public class MyCreation
     public static void main (String[] args)
     {
 	MyCreation m = new MyCreation ();
-	/*
 	m.background1 ();
 	m.background2 ();
 	m.shrek1 ();
 	m.sanic1 ();
 	m.shrek2 ();
 	m.mountainDew ();
-		m.shrek3 ();
-	*/
+	m.shrek3 ();
 	m.loominarty ();
 
     }
