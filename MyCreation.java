@@ -3,9 +3,6 @@ Richard Yi
 My Creation
 Mrs. Krasteva
 Oct. 19 2016
-
-
-This program...
 */
 
 import hsa.Console;
@@ -151,8 +148,7 @@ public class MyCreation
     {
 	MyCreation m = new MyCreation ();
 
-
-	//m.background1 ();
+	m.background1 ();
 	m.background2 ();
 
 	m.sanic1 ();
@@ -162,8 +158,6 @@ public class MyCreation
 	m.shrek3 ();
 	m.loominarty ();
 	m.airhorn ();
-
-
 	m.quickscope ();
     }
 }

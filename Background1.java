@@ -1,11 +1,8 @@
 /*
 Richard Yi
-Background #1
+My Creation
 Mrs. Krasteva
 Oct. 19 2016
-
-
-This program...
 */
 
 import hsa.Console;
@@ -43,6 +40,7 @@ public class Background1
 	Color sand = new Color (255, 233, 121);
 	Color lightSand = new Color (255, 255, 151);
 	Color skyBlue = new Color (99, 210, 255);
+	Color darkSky = new Color (79, 190, 235);
 	Color dorito = new Color (247, 111, 0);
 	Color sun = new Color (255, 255, 0);
 	Color deadBush = new Color (153, 76, 0);
@@ -110,12 +108,18 @@ public class Background1
 	    d.drawLine (i, 350, i, 380, sand);
 	}
 
-	delay (3000);
+	c.setColor (darkSky);
+	c.setFont (new Font ("Comic Sans MS", 1, 30));
+	c.drawString ("RICHARD YI", 69, 69);
+
+	delay (2500);
 
 	for (int x = 0 ; x <= 640 ; x++)
 	{
-	    d.drawLine (x, 0, x, 500, Color.black);
+	    d.drawLine (x, 0, x, 500, Color.black); //black screen
 	}
+
+	delay (500);
 
 	c.setColor (Color.green);
 	c.setFont (new Font ("Comic Sans MS", 1, 40));

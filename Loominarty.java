@@ -1,3 +1,10 @@
+/*
+Richard Yi
+My Creation
+Mrs. Krasteva
+Oct. 19 2016
+*/
+
 import hsa.Console;
 import java.awt.*;
 import java.lang.Thread;
