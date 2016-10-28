@@ -1,0 +1,142 @@
+[1mdiff --git a/MyCreation.java b/MyCreation.java[m
+[1mindex 52623d9..6246a7a 100644[m
+[1m--- a/MyCreation.java[m
+[1m+++ b/MyCreation.java[m
+[36m@@ -33,7 +33,7 @@[m [mpublic class MyCreation[m
+ [m
+     public void sanic1 ()[m
+     {[m
+[31m-	Sanic s = new Sanic (c, 1);[m
+[32m+[m	[32mSanic s = new Sanic (c);[m
+ 	s.start ();[m
+ [m
+     }[m
+[36m@@ -144,21 +144,31 @@[m [mpublic class MyCreation[m
+     }[m
+ [m
+ [m
+[32m+[m[32m    public void theEnd ()[m
+[32m+[m[32m    {[m
+[32m+[m	[32mTheEnd te = new TheEnd (c);[m
+[32m+[m	[32mte.run ();[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m
+     public static void main (String[] args)[m
+     {[m
+ 	MyCreation m = new MyCreation ();[m
+[31m-[m
+[31m-	m.background1 ();[m
+[31m-	m.background2 ();[m
+[31m-[m
+[31m-	m.sanic1 ();[m
+[31m-	m.shrek1 ();[m
+[31m-	m.shrek2 ();[m
+[31m-	m.mountainDew ();[m
+[31m-	m.shrek3 ();[m
+[31m-	m.loominarty ();[m
+[31m-	m.airhorn ();[m
+[31m-	m.quickscope ();[m
+[32m+[m	[32m/*[m
+[32m+[m		[32mm.background1 ();[m
+[32m+[m		[32mm.background2 ();[m
+[32m+[m
+[32m+[m		[32mm.sanic1 ();[m
+[32m+[m		[32mm.shrek1 ();[m
+[32m+[m		[32mm.shrek2 ();[m
+[32m+[m		[32mm.mountainDew ();[m
+[32m+[m		[32mm.shrek3 ();[m
+[32m+[m		[32mm.loominarty ();[m
+[32m+[m		[32mm.airhorn ();[m
+[32m+[m		[32mm.quickscope ();[m
+[32m+[m		[32m*/[m
+[32m+[m
+[32m+[m	[32mm.theEnd ();[m
+     }[m
+ }[m
+ [m
+[1mdiff --git a/Quickscope.java b/Quickscope.java[m
+[1mindex 76545de..d1eb12a 100644[m
+[1m--- a/Quickscope.java[m
+[1m+++ b/Quickscope.java[m
+[36m@@ -46,7 +46,26 @@[m [mpublic class Quickscope extends Thread[m
+ [m
+ 	int y = 300;[m
+ [m
+[31m-	for (int x = 640 ; x >= 100 ; x--)[m
+[32m+[m	[32mfor (int x = 640 ; x >= 450 ; x--)[m
+[32m+[m	[32m{[m
+[32m+[m	[32m    d.fillRect (x, y, 160, 60, pyramidFloor);[m
+[32m+[m
+[32m+[m	[32m    int gunX[] = {10 + x, 150 + x, 150 + x, 130 + x, 60 + x, 60 + x, 10 + x};[m
+[32m+[m	[32m    int gunY[] = {20 + y, 20 + y, 45 + y, 35 + y, 35 + y, 30 + y, 30 + y};[m
+[32m+[m	[32m    d.fillPolygon (gunX, gunY, 7, gun);[m
+[32m+[m
+[32m+[m	[32m    d.drawLine (100 + x, 20 + y, 100 + x, 15 + y, gun);[m
+[32m+[m	[32m    d.drawLine (110 + x, 20 + y, 110 + x, 15 + y, gun);[m
+[32m+[m
+[32m+[m	[32m    d.fillRect (70 + x, 5 + y, 50, 10, gun);[m
+[32m+[m	[32m    d.fillOval (115 + x, 5 + y, 10, 10, gun);[m
+[32m+[m	[32m    d.drawOval (115 + x, 5 + y, 9, 10, Color.black);[m
+[32m+[m	[32m    delay (1);[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32mdelay (1000);[m
+[32m+[m
+[32m+[m	[32mfor (int x = 450 ; x >= 100 ; x--)[m
+ 	{[m
+ 	    d.fillRect (x, y, 160, 60, pyramidFloor);[m
+ [m
+[36m@@ -61,25 +80,18 @@[m [mpublic class Quickscope extends Thread[m
+ 	    d.fillOval (115 + x, 5 + y, 10, 10, gun);[m
+ 	    d.drawOval (115 + x, 5 + y, 9, 10, Color.black);[m
+ [m
+[31m-	    //delay (10);[m
+ 	}[m
+ [m
+ 	Color explosion[] = {new Color (232, 147, 58), new Color (232, 147, 58), new Color (188, 46, 7) };[m
+ [m
+[31m-	Color explosion1 = new Color (232, 147, 58);[m
+[31m-	Color explosion2 = new Color (239, 255, 66);[m
+[31m-	Color explosion3 = new Color (188, 46, 7);[m
+[31m-[m
+ 	for (int i = 0 ; i < 1000 ; i++)[m
+ 	{[m
+ 	    d.drawOval (200 - i / 2, 300 - i / 2, i, i, explosion [i % 3]);[m
+[31m-	    //delay (1);[m
+ 	}[m
+ [m
+ 	d.fillRect (0, 0, c.maxx (), c.maxy (), Color.black);[m
+ 	c.setColor (Color.white);[m
+ 	c.setFont (new Font ("Comic Sans MS", 1, 50));[m
+[31m-	c.drawString ("The end.", 100, 100);[m
+[31m-[m
+[32m+[m	[32mc.drawString ("Sample text", 100, 100);[m
+     }[m
+ }[m
+[1mdiff --git a/Sanic.java b/Sanic.java[m
+[1mindex cf29a71..6c991d9 100644[m
+[1m--- a/Sanic.java[m
+[1m+++ b/Sanic.java[m
+[36m@@ -7,19 +7,17 @@[m [mOct. 19 2016[m
+ [m
+ import hsa.Console;[m
+ import java.awt.*;[m
+[31m-import java.lang.Runnable;[m
+[32m+[m[32mimport java.lang.Thread;[m
+ [m
+ public class Sanic extends Thread[m
+ {[m
+     private Console c;[m
+     private ConsoleWithColor d;[m
+[31m-    private int phase;[m
+ [m
+[31m-    public Sanic (Console con, int p)[m
+[32m+[m[32m    public Sanic (Console con)[m
+     {[m
+ 	c = con;[m
+ 	d = new ConsoleWithColor (c);[m
+[31m-	phase = p;[m
+     }[m
+ [m
+ [m

@@ -33,7 +33,7 @@ public class MyCreation
 
     public void sanic1 ()
     {
-	Sanic s = new Sanic (c, 1);
+	Sanic s = new Sanic (c);
 	s.start ();
 
     }
@@ -144,21 +144,31 @@ public class MyCreation
     }
 
 
+    public void theEnd ()
+    {
+	TheEnd te = new TheEnd (c);
+	te.run ();
+    }
+
+
     public static void main (String[] args)
     {
 	MyCreation m = new MyCreation ();
+	/*
+		m.background1 ();
+		m.background2 ();
 
-	m.background1 ();
-	m.background2 ();
+		m.sanic1 ();
+		m.shrek1 ();
+		m.shrek2 ();
+		m.mountainDew ();
+		m.shrek3 ();
+		m.loominarty ();
+		m.airhorn ();
+		m.quickscope ();
+		*/
 
-	m.sanic1 ();
-	m.shrek1 ();
-	m.shrek2 ();
-	m.mountainDew ();
-	m.shrek3 ();
-	m.loominarty ();
-	m.airhorn ();
-	m.quickscope ();
+	m.theEnd ();
     }
 }
 

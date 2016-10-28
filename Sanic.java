@@ -7,19 +7,17 @@ Oct. 19 2016
 
 import hsa.Console;
 import java.awt.*;
-import java.lang.Runnable;
+import java.lang.Thread;
 
 public class Sanic extends Thread
 {
     private Console c;
     private ConsoleWithColor d;
-    private int phase;
 
-    public Sanic (Console con, int p)
+    public Sanic (Console con)
     {
 	c = con;
 	d = new ConsoleWithColor (c);
-	phase = p;
     }
 
 
